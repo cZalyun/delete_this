@@ -80,5 +80,9 @@
       "rules": {}
     }
   ],
-  "plugins": ["@nx"]
+  "plugins": ["@nx"],
+  "parserOptions": {
+    "project": ["./tsconfig.base.json"],
+    "tsconfigRootDir": "__dirname",
+  },
 }

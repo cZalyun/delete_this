@@ -1,7 +1,7 @@
 # Include the following topics in this advanced sample project
 - NX - done
-- Angular (standalone component, signal, signal store)
-- NGRX
+- Angular (standalone component, signal)
+- NGRX ( signal store )
 - RXJS
 - FACADE
 - SOLID
