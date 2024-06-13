@@ -1,0 +1,13 @@
+# Include the following topics in this advanced sample project
+- NX
+- Angular
+- NGRX
+- RXJS
+- FACADE
+- SOLID
+- OOP
+- CLEAN CODE
+- AZURE PIPELINES
+- ELECTRON
+- WEBSOCKET
+- RESTAPI (SWAGGER)
