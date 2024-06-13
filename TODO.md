@@ -1,13 +1,13 @@
 # Include the following topics in this advanced sample project
-- NX
-- Angular
+- NX - done
+- Angular (standalone component, signal, signal store)
 - NGRX
 - RXJS
 - FACADE
 - SOLID
 - OOP
 - CLEAN CODE
-- AZURE PIPELINES
+- AZURE PIPELINES - DONE
 - ELECTRON
 - WEBSOCKET
 - RESTAPI (SWAGGER)
