@@ -3,7 +3,7 @@
 - Angular (standalone component, signal)
 - NGRX ( signal store )
 - RXJS
-- FACADE
+- FACADE, több dummy component 
 - SOLID
 - OOP
 - CLEAN CODE
