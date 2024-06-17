@@ -1,7 +1,3 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-
 export interface Hair {
   color: string;
   type: string;
@@ -84,17 +80,9 @@ export interface User {
   role: string;
 }
 
-@Injectable({
-  providedIn: 'root'
-})
-// This usually a complex library with a lot of dependencies and functions
-export class DummyUsersService {
-
-  private apiUrl = 'https://dummyjson.com/users';
-
-  constructor(private http: HttpClient) {}
-
-  public getData(): Observable<User[]> {
-    return this.http.get<User[]>(this.apiUrl);
-  }
+export interface UserResponse {
+  limit: number,
+  skip: number,
+  total: number,
+  users: User[]
 }
