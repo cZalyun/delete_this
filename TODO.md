@@ -1,16 +1,18 @@
 # Include the following topics in this advanced sample project
 - NX - done - domain design driven
 - Angular (standalone component, signal)
-- NGRX ( signal store )
+- NGRX ( signal store vs  not ), https://dev.to/dnlrbz/nx-angular-monorepo-and-shared-ngrx-store-h83
 - RXJS
-- FACADE, több dummy component 
+- FACADE - done 
 - SOLID
 - OOP
 - CLEAN CODE
 - AZURE PIPELINES - DONE
 - ELECTRON
-- WEBSOCKET
+- WEBSOCKET - https://websocket.org/tools/websocket-echo-server/ ==> echo ws server
 - RESTAPI (SWAGGER)
+- MIXINS
+- Chat BE as separate new app
 
 make the project to compatible with devcontainer
 
@@ -20,3 +22,8 @@ https://dev.to/this-is-angular/whatnew-in-angular-18-60j
 nx library types
 
 no business logic in the apps folder 
+
+https://github.com/duncanhunter/Enterprise-Angular-Applications-With-NgRx-and-Nx-Book/tree/master
+
+## Need to generate the root store for the application
+## Install ngrx store dev tools

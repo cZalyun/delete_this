@@ -20,7 +20,10 @@
       "@angular-advanced-sample/dummy/model": ["libs/dummy/model/src/index.ts"],
       "@angular-advanced-sample/dummy/ui": ["libs/dummy/ui/src/index.ts"],
       "@angular-advanced-sample/libs/shared-utils": ["libs/shared-utils/src/index.ts"],
-      "@angular-advanced-sample/test": ["libs/test/src/index.ts"]
+      "@angular-advanced-sample/users/feature": ["libs/users/feature/src/index.ts"],
+      "@angular-advanced-sample/users/models": ["libs/users/models/src/index.ts"],
+      "@angular-advanced-sample/users/state": ["libs/users/state/src/index.ts"],
+      "@angular-advanced-sample/users/store": ["libs/users/store/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
