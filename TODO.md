@@ -12,7 +12,7 @@
 - WEBSOCKET - https://websocket.org/tools/websocket-echo-server/ ==> echo ws server
 - RESTAPI (SWAGGER)
 - MIXINS
-- Chat BE as separate new app
+- Chat BE as separate new app, this will includes communication with rest api + communicating with websocket
 
 make the project to compatible with devcontainer
 

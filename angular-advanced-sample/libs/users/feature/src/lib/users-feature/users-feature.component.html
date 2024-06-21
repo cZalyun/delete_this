@@ -1,1 +1,11 @@
 <p>users-feature works!</p>
+
+<!-- The signal way -->
+@for(user of users(); track user.id) {
+  <lib-user-card [user]=user></lib-user-card>
+}
+
+<!-- The old way with async pipe -->
+@for(user of users$ | async; track user.id) {
+
+}

@@ -9,6 +9,8 @@ npx create-nx-workspace@latest angular-monorepo --preset=angular-monorepo
 ```
 npx nx list @nx/angular
 ```
+# The Domain Driven Design
+
 
 # Generate root store & feature store
 https://ng-journal.com/blog/2023-08-09-nx-and-ngrx/
