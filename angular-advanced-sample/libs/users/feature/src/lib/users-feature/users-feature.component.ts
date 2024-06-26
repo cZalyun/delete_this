@@ -7,11 +7,12 @@ import { User } from '@angular-advanced-sample/users/models';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { Observable } from 'rxjs';
 import { UserCardComponent } from '@angular-advanced-sample/users/ui/user-card';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @Component({
   selector: 'lib-users-feature',
   standalone: true,
-  imports: [CommonModule, UsersStoreModule, UserCardComponent],
+  imports: [CommonModule, UsersStoreModule, UserCardComponent, MatDialogModule],
   templateUrl: './users-feature.component.html',
   styleUrl: './users-feature.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -26,4 +27,12 @@ export class UsersFeatureComponent {
 
   // With pure rxjs: Manual (un)subscriptions, if you use | async pipe in the template => x async pipe === x subscriptions
   public users$: Observable<User[] | undefined> = this.store.select(UsersActions.selectAllUsers);
+
+  public deleteClickHandler(userId: number): void {
+    console.log('Delete button has been pressed for this user: ', userId);
+  }
+
+  public detailsClickHandler(userId: number): void {
+    console.log('Details button has been pressed for this user: ', userId)
+  }
 }

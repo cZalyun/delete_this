@@ -1,4 +1,4 @@
-import { Component, Input, InputSignal, input } from '@angular/core';
+import { Component, EventEmitter, Input, InputSignal, Output, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -14,31 +14,19 @@ export class ButtonComponent {
   // red background color
   public _isDeleteButton: boolean = false;
 
-  // We want to notify the parent component that, this the user
-  // clicked in this component
-  public _clickHandler!: () => void;
-
   @Input()
-  set clickHandler(handler: () => void) {
-    this._clickHandler = handler;
+  set isDeleteButton(value: boolean) {
+    this._isDeleteButton = value;
   }
 
   @Input()
-  set buttonLabel(buttonLabel: string) {
-    this._buttonLabel = buttonLabel;
+  set buttonLabel(label: string) {
+    this._buttonLabel = label;
   }
 
-  @Input()
-  set isDeleteButton(isDeleteButton: boolean) {
-    this._isDeleteButton = isDeleteButton;
-  }
+  @Output() clicked = new EventEmitter<void>();
 
-  public handleClickEvent(): void {
-    // If no handler function is defined simply do not do anything
-    if (!this.clickHandler) {
-      return;
-    }
-
-    this.clickHandler();
+  public click(): void {
+    this.clicked.emit();
   }
 }

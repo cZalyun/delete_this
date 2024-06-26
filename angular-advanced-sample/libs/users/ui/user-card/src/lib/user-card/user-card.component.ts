@@ -1,4 +1,4 @@
-import { Component, InputSignal, input } from '@angular/core';
+import { Component, EventEmitter, InputSignal, Output, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { User } from '@angular-advanced-sample/users/models';
 import { ButtonComponent } from '@angular-advanced-sample/users/ui/button';
@@ -13,11 +13,14 @@ import { ButtonComponent } from '@angular-advanced-sample/users/ui/button';
 export class UserCardComponent {
   public user: InputSignal<User | undefined> = input<User>();
 
-  public deleteButtonClicked(): void {
-    console.log('Delete button clicked');
+  @Output() deleteClicked = new EventEmitter<number>();
+  @Output() detailsClicked = new EventEmitter<number>();
+
+  public handleDeleteClicked(): void {
+    this.deleteClicked.emit(this.user()?.id);
   }
 
-  public detailsButtonClicked(): void {
-    console.log('Details button clicked');
+  public handleDetailsClicked(): void {
+    this.detailsClicked.emit(this.user()?.id);
   }
 }

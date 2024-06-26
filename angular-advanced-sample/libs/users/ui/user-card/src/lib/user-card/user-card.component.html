@@ -6,13 +6,13 @@
     <lib-button
       class='button'
       [buttonLabel]="'Details'"
-      [clickHandler]='detailsButtonClicked'
+      (clicked)='handleDetailsClicked()'
       [isDeleteButton]='false'
     ></lib-button>
     <lib-button
       class='button'
       [buttonLabel]="'DELETE'"
-      [clickHandler]='deleteButtonClicked'
+      (clicked)='handleDeleteClicked()'
       [isDeleteButton]='true'
     ></lib-button>
   </div>
