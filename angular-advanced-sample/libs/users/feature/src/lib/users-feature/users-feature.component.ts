@@ -5,20 +5,24 @@ import { Store } from '@ngrx/store';
 import * as UsersActions from '@angular-advanced-sample/users/store';
 import { User } from '@angular-advanced-sample/users/models';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { Observable } from 'rxjs';
+import { Observable, filter, first, tap } from 'rxjs';
 import { UserCardComponent } from '@angular-advanced-sample/users/ui/user-card';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef, } from '@angular/material/dialog';
+import { ConfirmationPopupComponent } from '@angular-advanced-sample/users/ui/confirmation-popup';
 
 @Component({
   selector: 'lib-users-feature',
   standalone: true,
-  imports: [CommonModule, UsersStoreModule, UserCardComponent, MatDialogModule],
+  imports: [CommonModule, UsersStoreModule, UserCardComponent, ConfirmationPopupComponent],
   templateUrl: './users-feature.component.html',
   styleUrl: './users-feature.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UsersFeatureComponent {
-  constructor(private store: Store<UsersEntity>) {
+  constructor(
+    private store: Store<UsersEntity>,
+    private dialog: MatDialog
+  ) {
     this.store.dispatch(UsersActions.initUsers());
   }
 
@@ -30,6 +34,16 @@ export class UsersFeatureComponent {
 
   public deleteClickHandler(userId: number): void {
     console.log('Delete button has been pressed for this user: ', userId);
+    const dialogRef: MatDialogRef<ConfirmationPopupComponent> = this.dialog.open(ConfirmationPopupComponent, {
+      data: this.users()?.find((user: User) => user.id === userId)
+    });
+
+    dialogRef.afterClosed().pipe(
+      first(),
+      filter((userDecisionObj: { userDecision: boolean }) => userDecisionObj.userDecision)
+    ).subscribe(() => {
+      this.store.dispatch(UsersActions.deleteUser({ userId: userId }))
+    })
   }
 
   public detailsClickHandler(userId: number): void {

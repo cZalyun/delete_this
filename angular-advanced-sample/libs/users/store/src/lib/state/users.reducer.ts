@@ -27,6 +27,7 @@ const reducer = createReducer(
   on(UsersActions.initUsers, state => ({ ...state, loaded: false, error: null })),
   on(UsersActions.loadUsersSuccess, (state, { users }) => usersAdapter.setAll(users, { ...state, loaded: true })),
   on(UsersActions.loadUsersFailure, (state, { error }) => ({ ...state, error })),
+  on(UsersActions.deleteUser, (state, { userId }) =>usersAdapter.removeOne(userId, { ...state })),
 );
 
 // TODO: investigate why this is throwing error

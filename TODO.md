@@ -1,8 +1,8 @@
 # Include the following topics in this advanced sample project
 - NX - done - domain design driven
-- Angular (standalone component, signal)
+- Angular (standalone component, signal) - done
 - NGRX ( signal store vs  not ), https://dev.to/dnlrbz/nx-angular-monorepo-and-shared-ngrx-store-h83
-- RXJS
+- RXJS - done
 - FACADE - done 
 - SOLID
 - OOP
