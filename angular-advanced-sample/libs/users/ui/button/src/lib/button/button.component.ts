@@ -14,12 +14,12 @@ export class ButtonComponent {
   // red background color
   public _isDeleteButton: boolean = false;
 
-  @Input()
+  @Input({required: true})
   set isDeleteButton(value: boolean) {
     this._isDeleteButton = value;
   }
 
-  @Input()
+  @Input({required: true})
   set buttonLabel(label: string) {
     this._buttonLabel = label;
   }

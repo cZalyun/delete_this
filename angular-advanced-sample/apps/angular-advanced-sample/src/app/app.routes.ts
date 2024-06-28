@@ -7,6 +7,7 @@ import { provideState } from '@ngrx/store';
 import * as fromUsers from '@angular-advanced-sample/users/store';
 import { provideEffects } from '@ngrx/effects';
 import { UsersEffects } from 'libs/users/store/src/lib/state/users.effects';
+import { PageNotFoundComponent } from '@angular-advanced-sample/page-not-found';
 
 export const appRoutes: Route[] = [
   {
@@ -33,5 +34,10 @@ export const appRoutes: Route[] = [
   {
     path: 'chat',
     component: WsChatRxjsComponent
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent
   }
+  // ** = random redirect
 ];

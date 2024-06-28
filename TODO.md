@@ -27,3 +27,5 @@ https://github.com/duncanhunter/Enterprise-Angular-Applications-With-NgRx-and-Nx
 
 ## Need to generate the root store for the application
 ## Install ngrx store dev tools
+
+Tags eslint, type:ui | type:store | type:feature etc... https://nx.dev/features/enforce-module-boundaries

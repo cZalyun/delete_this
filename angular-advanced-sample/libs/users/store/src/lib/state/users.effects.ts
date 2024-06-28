@@ -14,7 +14,7 @@ export class UsersEffects {
   init$ = createEffect(() =>
     this.actions$.pipe(
       ofType(UsersActions.initUsers),
-      mergeMap(() => this.http.get<UserResponse>('https://dummyjson.com/users').pipe(
+      mergeMap(() => this.http.get<UserResponse>('https://dummyjson.com/users').pipe( // service into data-access -- injection token url
         map((usersResponse: UserResponse) => UsersActions.loadUsersSuccess({users: usersResponse.users}))
       )),
       catchError(error => {

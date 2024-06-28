@@ -5,15 +5,16 @@ import { Store } from '@ngrx/store';
 import * as UsersActions from '@angular-advanced-sample/users/store';
 import { User } from '@angular-advanced-sample/users/models';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { Observable, filter, first, tap } from 'rxjs';
+import { Observable, filter, first } from 'rxjs';
 import { UserCardComponent } from '@angular-advanced-sample/users/ui/user-card';
 import { MatDialog, MatDialogRef, } from '@angular/material/dialog';
 import { ConfirmationPopupComponent } from '@angular-advanced-sample/users/ui/confirmation-popup';
+import { UserDetailsComponent } from '@angular-advanced-sample/users/ui/user-details';
 
 @Component({
   selector: 'lib-users-feature',
   standalone: true,
-  imports: [CommonModule, UsersStoreModule, UserCardComponent, ConfirmationPopupComponent],
+  imports: [CommonModule, UsersStoreModule, UserCardComponent],
   templateUrl: './users-feature.component.html',
   styleUrl: './users-feature.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -48,5 +49,9 @@ export class UsersFeatureComponent {
 
   public detailsClickHandler(userId: number): void {
     console.log('Details button has been pressed for this user: ', userId)
+
+    const dialogRef: MatDialogRef<UserDetailsComponent> = this.dialog.open(UserDetailsComponent, {
+      data: this.users()?.find((user: User) => user.id === userId)
+    });
   }
 }

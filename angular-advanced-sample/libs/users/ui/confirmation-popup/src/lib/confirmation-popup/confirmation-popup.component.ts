@@ -14,7 +14,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 export class ConfirmationPopupComponent {
   constructor(
     public dialogRef: MatDialogRef<ConfirmationPopupComponent>,
-    @Optional() @Inject(MAT_DIALOG_DATA) public userData: User
+    @Inject(MAT_DIALOG_DATA) public userData: User
   ) {
     console.log('userData from confirmation component: ', this.userData);
     this.user.set(this.userData);
