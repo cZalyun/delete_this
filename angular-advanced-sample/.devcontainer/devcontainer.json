@@ -1,0 +1,16 @@
+{
+  "name": "Nx Angular Advanced Sample",
+  "dockerFile": "Dockerfile",
+  "context": "..",
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "extensions": [
+    "angular.ng-template",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "nx.angular-console"
+  ],
+  "postCreateCommand": "npm install"
+}
+
