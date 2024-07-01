@@ -1,7 +1,7 @@
 {
   "name": "Nx Angular Advanced Sample",
   "dockerFile": "Dockerfile",
-  "context": "..",
+  "context": "./angular-advances-sample",
   "settings": {
     "terminal.integrated.shell.linux": "/bin/bash"
   },
