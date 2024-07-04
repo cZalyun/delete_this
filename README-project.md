@@ -36,7 +36,7 @@ For the models used in our domain, create a new lib, called models. In this case
 If you only have interfaces in your model lib, I dont really see the reason why you need modules files, so in this case you can generate this lib with standalone mode
 
 ## Using state in the app
-1. DO NOT EVER PUT STOREMODULE.FORFEATURE(...) into the fcking state.module.ts file pls
+1. DO NOT EVER PUT STOREMODULE.FORFEATURE(...) into the state.module.ts file pls
 2. app.config.ts
 ```
 export const appConfig: ApplicationConfig = {
