@@ -1,8 +1,8 @@
 services:
-  angular-advances-sample:
+  angular-advanced-sample:
     build: .
     ports:
       - '4200:4200'
-    command: npx nx run angular-advanced-sample:serve:development
+    command: npx nx run angular-advanced-sample:serve:development --host=0.0.0.0
     volumes:
       - ./:/workspace:rw

@@ -1,15 +1,15 @@
 FROM node:20
 
+USER node
+
 WORKDIR /workspace
 
-COPY ./package*.json ./
+RUN chown node:node /workspace
 
-RUN pwd
-
-RUN ls -al
+COPY --chown=node:node ./package*.json ./
 
 RUN npm i
 
-COPY . .
+COPY --chown=node:node . .
 
 EXPOSE 4200
